@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice Garden - Authentic South Indian Vegetarian Restaurant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            letter-spacing: 1px;
+        }
+
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #d4af37;
+            margin-right: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23654321" width="1200" height="600"/><circle fill="%23432110" cx="200" cy="150" r="80"/><circle fill="%23765432" cx="800" cy="400" r="100"/><circle fill="%23543210" cx="1000" cy="200" r="60"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            animation: fadeInDown 1s ease-in;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-in;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #d4af37;
+            color: #1a1a1a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .btn:hover {
+            background: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212,175,55,0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 10%;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: #d4af37;
+            margin: 1rem auto;
+        }
+
+        /* About Section */
+        #about {
+            background: #f9f9f9;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            height: 400px;
+            background: linear-gradient(45deg, #d4af37, #f4d03f);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        /* Menu Section */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .menu-item h3 {
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .menu-item .price {
+            color: #1a1a1a;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item p {
+            color: #666;
+        }
+
+        /* Gallery Section */
+        #gallery {
+            background: #f9f9f9;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+        }
+
+        #contact h2 {
+            color: white;
+        }
+
+        #contact h2::after {
+            background: #d4af37;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info strong {
+            color: #d4af37;
+            margin-right: 0.5rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 1rem;
+            background: #d4af37;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .logo {
+                margin-bottom: 1rem;
+            }
+
+            section {
+                padding: 3rem 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li class="logo">Spice Garden</li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to Spice Garden</h1>
+        <p>Authentic South Indian Vegetarian Cuisine</p>
+        <a href="#menu" class="btn">View Our Menu</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>At Spice Garden, we bring you the authentic flavors of South India. Our restaurant specializes in traditional vegetarian dishes prepared using age-old recipes passed down through generations.</p>
+                <p>We use the finest spices, fresh vegetables, and traditional cooking methods to create dishes that transport you to the heart of South India. From crispy dosas to fluffy idlis, every dish is made with love and authenticity.</p>
+                <p>Experience the rich culinary heritage of Karnataka, Tamil Nadu, Kerala, and Andhra Pradesh, all under one roof.</p>
+            </div>
+            <div class="about-image">🍽️</div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>Masala Dosa</h3>
+                <p class="price">₹120</p>
+                <p>Crispy rice crepe filled with spiced potato masala, served with sambar and coconut chutney.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Idli Sambar</h3>
+                <p class="price">₹80</p>
+                <p>Soft steamed rice cakes served with flavorful lentil sambar and assorted chutneys.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Paneer Butter Masala</h3>
+                <p class="price">₹180</p>
+                <p>Cottage cheese cubes in rich creamy tomato gravy, served with butter naan or rice.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Hyderabadi Biryani</h3>
+                <p class="price">₹220</p>
+                <p>Fragrant basmati rice layered with vegetables and aromatic spices, served with raita.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Thali Meals</h3>
+                <p class="price">₹250</p>
+                <p>Complete South Indian meal with rice, sambar, rasam, curry, poriyal, curd, and dessert.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Filter Coffee</h3>
+                <p class="price">₹50</p>
+                <p>Traditional South Indian filter coffee made with freshly ground beans and hot milk.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Mysore Pak</h3>
+                <p class="price">₹100</p>
+                <p>Classic South Indian sweet made with gram flour, ghee, and sugar - melt in your mouth goodness.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Uttapam</h3>
+                <p class="price">₹110</p>
+                <p>Thick rice pancake topped with onions, tomatoes, and chilies, served with chutney.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Medu Vada</h3>
+                <p class="price">₹90</p>
+                <p>Crispy lentil donuts, deep-fried to perfection, served with sambar and coconut chutney.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">🥗</div>
+            <div class="gallery-item">🍝</div>
+            <div class="gallery-item">🥩</div>
+            <div class="gallery-item">🍷</div>
+            <div class="gallery-item">🍰</div>
+            <div class="gallery-item">🍤</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <p><strong>📍 Address:</strong> 123 MG Road, Koramangala, Bangalore 560034</p>
+                <p><strong>📞 Phone:</strong> +91 80 1234 5678</p>
+                <p><strong>📧 Email:</strong> info@spicegarden.com</p>
+                <p><strong>🕐 Hours:</strong> Mon-Sun: 8AM-3PM (Breakfast & Lunch)<br>6PM-10PM (Dinner)</p>
+            </div>
+            <div class="contact-form">
+                <form onsubmit="handleSubmit(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Your Phone">
+                    <textarea rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Spice Garden Restaurant. All Rights Reserved. | Pure Vegetarian 🌱</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            event.target.reset();
+        }
+
+        // Add scroll effect to nav
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)';
+            } else {
+                nav.style.background = 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)';
+            }
+        });
+    </script>
+</body>
+</html>
