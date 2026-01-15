@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="gu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spice Garden - Authentic South Indian Vegetarian Restaurant</title>
+    <title>Premium Menu - Jayantibhai Mavavala</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;600;700;900&family=Playfair+Display:wght@400;600;700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,678 +12,1052 @@
             box-sizing: border-box;
         }
 
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
         body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Noto Sans Gujarati', 'Montserrat', sans-serif;
+            background: #0a0a0a;
+            overflow-x: hidden;
         }
 
-        /* Navigation */
-        nav {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            padding: 1rem 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        nav ul li {
-            margin: 0 1.5rem;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-            letter-spacing: 1px;
-        }
-
-        nav ul li a:hover {
-            color: #d4af37;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #d4af37;
-            margin-right: auto;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23654321" width="1200" height="600"/><circle fill="%23432110" cx="200" cy="150" r="80"/><circle fill="%23765432" cx="800" cy="400" r="100"/><circle fill="%23543210" cx="1000" cy="200" r="60"/></svg>');
-            background-size: cover;
-            background-position: center;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            margin-top: 70px;
-            padding: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-            animation: fadeInDown 1s ease-in;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-in;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            animation: fadeIn 1.5s ease-in;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1.2rem 2.5rem;
-            background: #d4af37;
-            color: #1a1a1a;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            transition: all 0.3s;
-            min-width: 200px;
-        }
-
-        .btn:hover {
-            background: #fff;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(212,175,55,0.3);
-        }
-
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .btn-whatsapp:hover {
-            background: #20BA5A;
-        }
-
-        .btn-call {
-            background: #4CAF50;
-            color: white;
-        }
-
-        .btn-call:hover {
-            background: #45a049;
-        }
-
-        /* Veg Badge */
-        .veg-badge {
-            display: inline-block;
-            width: 18px;
-            height: 18px;
-            border: 2px solid #00B300;
-            border-radius: 3px;
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            page-break-after: always;
             position: relative;
-            margin-right: 5px;
-            vertical-align: middle;
+            overflow: hidden;
+            background: #000;
         }
 
-        .veg-badge::after {
+        .bg-pattern {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, #f9a825 35px, #f9a825 37px),
+                repeating-linear-gradient(-45deg, transparent, transparent 35px, #f9a825 35px, #f9a825 37px);
+            pointer-events: none;
+        }
+
+        .front-page {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(ellipse at center, #1a1410 0%, #000000 100%);
+            position: relative;
+        }
+
+        .front-page::before {
             content: '';
             position: absolute;
-            width: 8px;
-            height: 8px;
-            background: #00B300;
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(249, 168, 37, 0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
         }
 
-        /* Sections */
-        section {
-            padding: 5rem 10%;
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.5; }
         }
 
-        h2 {
+        .logo-container {
             text-align: center;
-            font-size: 3rem;
-            margin-bottom: 3rem;
-            color: #1a1a1a;
+            position: relative;
+            z-index: 10;
+            animation: fadeInScale 1.5s ease-out;
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .logo-frame {
+            position: relative;
+            display: inline-block;
+            padding: 30px;
+        }
+
+        .logo-frame::before,
+        .logo-frame::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            border: 2px solid #f9a825;
+        }
+
+        .logo-frame::before {
+            top: 0;
+            left: 0;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .logo-frame::after {
+            bottom: 0;
+            right: 0;
+            border-left: none;
+            border-top: none;
+        }
+
+        .logo-container img {
+            max-width: 500px;
+            height: auto;
+            filter: drop-shadow(0 10px 40px rgba(249, 168, 37, 0.6));
             position: relative;
         }
 
-        h2::after {
+        .tagline {
+            margin-top: 30px;
+            font-family: 'Playfair Display', serif;
+            font-size: 18pt;
+            color: #f9a825;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(249, 168, 37, 0.5);
+        }
+
+        .established {
+            margin-top: 15px;
+            font-size: 14pt;
+            color: #ccc;
+            letter-spacing: 2px;
+        }
+
+        .menu-page {
+            padding: 15mm 12mm;
+            background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
+            color: #fff;
+            position: relative;
+        }
+
+        .corner-decoration {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #f9a825;
+        }
+
+        .corner-decoration.top-left {
+            top: 8mm;
+            left: 8mm;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .corner-decoration.top-right {
+            top: 8mm;
+            right: 8mm;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .corner-decoration.bottom-left {
+            bottom: 8mm;
+            left: 8mm;
+            border-right: none;
+            border-top: none;
+        }
+
+        .corner-decoration.bottom-right {
+            bottom: 8mm;
+            right: 8mm;
+            border-left: none;
+            border-top: none;
+        }
+
+        .menu-header {
+            text-align: center;
+            margin-bottom: 8mm;
+            position: relative;
+            padding-bottom: 5mm;
+        }
+
+        .menu-header::after {
             content: '';
-            display: block;
-            width: 100px;
-            height: 3px;
-            background: #d4af37;
-            margin: 1rem auto;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #f9a825, transparent);
         }
 
-        /* About Section */
-        #about {
-            background: #f9f9f9;
+        .menu-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28pt;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffd700 0%, #f9a825 50%, #ff8c00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(249, 168, 37, 0.4);
+            letter-spacing: 2px;
+            margin: 0 0 2mm 0;
+            padding: 0;
         }
 
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
+        .menu-header p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10pt;
+            letter-spacing: 3px;
+            color: #ccc;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin: 0;
+            padding: 0;
         }
 
-        .about-text p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
+        .category {
+            margin-bottom: 7mm;
         }
 
-        .about-image {
-            height: 400px;
-            background: linear-gradient(45deg, #d4af37, #f4d03f);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
+        .category-header {
+            background: linear-gradient(135deg, #2a2218 0%, #1a1410 100%);
+            padding: 3mm 4mm;
+            margin: 0 0 5mm 0;
+            border-radius: 2mm;
+            border: 1px solid #f9a825;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Menu Section */
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        .category-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(249, 168, 37, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            to { left: 100%; }
+        }
+
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 18pt;
+            font-weight: 700;
+            color: #f9a825;
+            text-shadow: 0 2px 10px rgba(249, 168, 37, 0.3);
+            position: relative;
+            margin: 0;
+            padding: 0;
+            line-height: 1.2;
+        }
+
+        .category-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 9pt;
+            color: #bbb;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 1.5mm 0 0 0;
+            padding: 0;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+
+        .bestseller-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff4757 0%, #d32f2f 100%);
+            color: #fff;
+            padding: 1mm 3mm;
+            margin: 0 0 0 3mm;
+            border-radius: 15px;
+            font-size: 8pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 10px rgba(255, 71, 87, 0.4);
+            animation: glow 2s ease-in-out infinite;
+            vertical-align: middle;
+            line-height: 1;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4); }
+            50% { box-shadow: 0 4px 25px rgba(255, 71, 87, 0.7); }
         }
 
         .menu-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            display: flex;
+            margin: 0 0 4mm 0;
+            padding: 3mm;
+            background: linear-gradient(135deg, #1a1410 0%, #0d0a08 100%);
+            border-radius: 2mm;
+            border: 1px solid #2a2218;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, #ffd700, #f9a825, #ff8c00);
         }
 
         .menu-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transform: translateX(2mm);
+            border-color: #f9a825;
+            box-shadow: 0 5px 20px rgba(249, 168, 37, 0.2);
         }
 
-        .menu-item h3 {
-            color: #d4af37;
-            margin-bottom: 0.5rem;
-            font-size: 1.5rem;
-        }
-
-        .menu-item .price {
-            color: #1a1a1a;
-            font-weight: bold;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .menu-item p {
+        .item-image-placeholder {
+            width: 22mm;
+            height: 22mm;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #2a2218 0%, #1a1410 100%);
+            border-radius: 2mm;
+            margin: 0 4mm 0 0;
+            padding: 0;
+            border: 2px solid #f9a825;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8pt;
             color: #666;
-        }
-
-        /* Gallery Section */
-        #gallery {
-            background: #f9f9f9;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .gallery-item {
-            height: 250px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-            transition: transform 0.3s;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-
-        /* Contact Section */
-        #contact {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: white;
-        }
-
-        #contact h2 {
-            color: white;
-        }
-
-        #contact h2::after {
-            background: #d4af37;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            font-size: 1.2rem;
-        }
-
-        .contact-info p {
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: flex-start;
-            line-height: 1.8;
-        }
-
-        .contact-info strong {
-            color: #d4af37;
-            margin-right: 0.5rem;
-            min-width: 120px;
-        }
-
-        .contact-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .contact-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: #d4af37;
-            color: #1a1a1a;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-
-        .contact-btn:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(212,175,55,0.3);
-        }
-
-        .contact-btn.whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .contact-btn.whatsapp:hover {
-            background: #20BA5A;
-        }
-
-        .contact-btn.call {
-            background: #4CAF50;
-            color: white;
-        }
-
-        .contact-btn.call:hover {
-            background: #45a049;
-        }
-
-        /* Map Section */
-        .map-container {
-            margin-top: 3rem;
-            border-radius: 10px;
+            text-align: center;
+            position: relative;
             overflow: hidden;
-            height: 400px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        .item-image-placeholder::after {
+            content: '🍽️';
+            font-size: 20pt;
+            opacity: 0.3;
         }
 
-        /* Payment Methods */
-        .payment-methods {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-top: 2rem;
-            text-align: center;
+        .item-image {
+            width: 22mm;
+            height: 22mm;
+            flex-shrink: 0;
+            border-radius: 2mm;
+            margin: 0 4mm 0 0;
+            padding: 0;
+            border: 2px solid #f9a825;
+            object-fit: cover;
         }
 
-        .payment-methods h3 {
-            color: #1a1a1a;
-            margin-bottom: 1rem;
+        .item-details {
+            flex: 1;
+            min-width: 0;
+            padding: 0;
+            margin: 0;
         }
 
-        .payment-icons {
+        .item-name-gu {
+            font-family: 'Noto Sans Gujarati', sans-serif;
+            font-size: 15pt;
+            font-weight: 700;
+            color: #f9a825;
+            margin: 0 0 1mm 0;
+            padding: 0;
+            text-shadow: 0 2px 8px rgba(249, 168, 37, 0.3);
+            line-height: 1.2;
+        }
+
+        .item-name-en {
+            font-family: 'Playfair Display', serif;
+            font-size: 14pt;
+            color: #bbb;
+            font-style: italic;
+            margin: 0 0 1.5mm 0;
+            padding: 0;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .item-description {
+            font-size: 11pt;
+            color: #999;
+            line-height: 1.3;
+            font-weight: 300;
+            margin: 0;
+            padding: 0;
+        }
+
+        .item-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14pt;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffd700 0%, #f9a825 100%);
+            color: #000;
+            padding: 2mm 4mm;
+            margin: 0 0 0 3mm;
+            border-radius: 20px;
+            white-space: nowrap;
+            box-shadow: 0 3px 12px rgba(249, 168, 37, 0.4);
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .live-section {
+            background: linear-gradient(135deg, #d32f2f 0%, #8b0000 100%);
+            padding: 4mm;
+            margin: 0 0 6mm 0;
+            border-radius: 2mm;
+            border: 2px solid #ff5252;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 6px 25px rgba(211, 47, 47, 0.5);
+        }
+
+        .live-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .live-header {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            font-size: 1.5rem;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 0 2.5mm 0;
+            padding: 0;
+            position: relative;
+            z-index: 1;
         }
 
-        /* Footer */
-        footer {
-            background: #0a0a0a;
-            color: white;
+        .live-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 16pt;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+            margin: 0;
+            padding: 0;
+            line-height: 1.2;
+        }
+
+        .live-timing {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10pt;
+            background: #fff;
+            color: #d32f2f;
+            padding: 2mm 4mm;
+            margin: 0;
+            border-radius: 20px;
+            font-weight: 700;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .back-page {
+            padding: 15mm 12mm;
+            background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
+            color: #fff;
+            position: relative;
+        }
+
+        .back-header {
             text-align: center;
-            padding: 2rem;
+            margin: 0 0 8mm 0;
+            padding: 0;
         }
 
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .back-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26pt;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffd700 0%, #f9a825 50%, #ff8c00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0 0 2mm 0;
+            padding: 0;
+            line-height: 1.2;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .contact-section {
+            background: linear-gradient(135deg, #1a1410 0%, #0d0a08 100%);
+            padding: 5mm;
+            margin: 0 0 5mm 0;
+            border-radius: 2mm;
+            border: 1px solid #2a2218;
+            position: relative;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, #ffd700, #f9a825, #ff8c00);
+            border-radius: 2mm 0 0 2mm;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
+        .contact-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 14pt;
+            color: #f9a825;
+            margin: 0 0 3mm 0;
+            padding: 0;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(249, 168, 37, 0.3);
+            line-height: 1.2;
+        }
 
-            .hero p {
-                font-size: 1.2rem;
-            }
+        .contact-item {
+            margin: 0;
+            padding: 0;
+            font-size: 10.5pt;
+            color: #bbb;
+            line-height: 1.5;
+        }
 
-            .hero-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
+        .contact-item strong {
+            color: #f9a825;
+            font-weight: 600;
+        }
 
-            .btn {
-                width: 100%;
-                font-size: 1.1rem;
-                padding: 1rem 2rem;
-            }
+        .qr-section {
+            display: flex;
+            gap: 5mm;
+            margin: 6mm 0 0 0;
+            padding: 0;
+        }
 
-            h2 {
-                font-size: 2rem;
-            }
+        .qr-box {
+            flex: 1;
+            background: linear-gradient(135deg, #1a1410 0%, #0d0a08 100%);
+            padding: 5mm;
+            margin: 0;
+            border-radius: 2mm;
+            text-align: center;
+            border: 1px solid #2a2218;
+            position: relative;
+        }
 
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
+        .qr-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 2mm;
+            padding: 1.5px;
+            background: linear-gradient(135deg, #ffd700, #f9a825, #ff8c00);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+        }
 
-            nav ul {
-                flex-direction: column;
-            }
+        .qr-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 12pt;
+            color: #f9a825;
+            margin: 0 0 3mm 0;
+            padding: 0;
+            font-weight: 700;
+            line-height: 1.2;
+        }
 
-            nav ul li {
-                margin: 0.5rem 0;
-            }
+        .qr-code {
+            width: 42mm;
+            height: 42mm;
+            margin: 0 auto;
+            padding: 0;
+            background: #fff;
+            border-radius: 2mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+        }
 
-            .logo {
-                margin-bottom: 1rem;
-                margin-right: 0;
-            }
+        .qr-code img {
+            max-width: 100%;
+            max-height: 100%;
+        }
 
-            section {
-                padding: 3rem 5%;
-            }
+        .footer {
+            text-align: center;
+            margin: 8mm 0 0 0;
+            padding: 0;
+            font-size: 10pt;
+            color: #888;
+        }
 
-            .contact-info {
-                font-size: 1rem;
-            }
+        .footer p {
+            margin: 2.5mm 0;
+            padding: 0;
+            line-height: 1.4;
+        }
 
-            .contact-info strong {
-                min-width: 100px;
-                font-size: 0.9rem;
-            }
+        .premium-text {
+            font-family: 'Playfair Display', serif;
+            color: #f9a825;
+            font-weight: 700;
+            font-size: 13pt;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(249, 168, 37, 0.4);
+        }
 
-            .contact-btn {
-                font-size: 1.1rem;
-                padding: 1.2rem;
-            }
+        .divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #f9a825, transparent);
+            margin: 4mm auto;
+            padding: 0;
+        }
 
-            .map-container {
-                height: 300px;
+        .loading {
+            text-align: center;
+            color: #f9a825;
+            font-size: 14pt;
+            padding: 20mm 0;
+        }
+
+        @media print {
+            body { background: #000; }
+            .page { margin: 0; box-shadow: none; }
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li class="logo">🌶️ Spice Garden</li>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <h1>Welcome to Spice Garden</h1>
-        <p>Authentic South Indian Vegetarian Cuisine Since 1985</p>
-        <div class="hero-buttons">
-            <a href="tel:+918012345678" class="btn btn-call">📞 Call to Order</a>
-            <a href="https://wa.me/918012345678?text=Hi%2C%20I%20want%20to%20order%20from%20Spice%20Garden" class="btn btn-whatsapp" target="_blank">💬 Order on WhatsApp</a>
-            <a href="#menu" class="btn">🍽️ View Menu</a>
+    <!-- PAGE 1: FRONT PAGE -->
+    <div class="page front-page">
+        <div class="bg-pattern"></div>
+        <div class="logo-container">
+            <div class="logo-frame">
+                <img src="Jayantibhai_Mava_logo.jpeg" alt="Jayantibhai Mavavala Logo">
+            </div>
+            <div class="tagline">Authentic Gujarati Delights</div>
+            <div class="established">⭐ Premium Quality Since 1980 ⭐</div>
         </div>
-    </section>
+    </div>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Us</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>At Spice Garden, we bring you the authentic flavors of South India. Our restaurant specializes in traditional vegetarian dishes prepared using age-old recipes passed down through generations.</p>
-                <p>We use the finest spices, fresh vegetables, and traditional cooking methods to create dishes that transport you to the heart of South India. From crispy dosas to fluffy idlis, every dish is made with love and authenticity.</p>
-                <p>Experience the rich culinary heritage of Karnataka, Tamil Nadu, Kerala, and Andhra Pradesh, all under one roof.</p>
-                <p><strong>🕐 Open Daily:</strong> 8:00 AM - 3:00 PM (Breakfast & Lunch) | 6:00 PM - 10:00 PM (Dinner)</p>
-            </div>
-            <div class="about-image">🍽️</div>
+    <!-- Dynamic Menu Pages -->
+    <div id="dynamicPages"></div>
+
+    <!-- PAGE: BACK PAGE -->
+    <div class="page back-page">
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration top-right"></div>
+        <div class="bg-pattern"></div>
+        
+        <div class="back-header">
+            <h2>અમારો સંપર્ક કરો</h2>
+            <p style="font-size: 12pt; color: #ccc; text-transform: uppercase; letter-spacing: 3px;">Contact Us</p>
         </div>
-    </section>
 
-    <!-- Menu Section -->
-    <section id="menu">
-        <h2>Our Special Menu</h2>
-        <div class="menu-grid">
-            <div class="menu-item">
-                <h3><span class="veg-badge"></span> Masala Dosa</h3>
-                <p class="price">₹120</p>
-                <p>Crispy rice crepe filled with spiced potato masala, served with sambar and coconut chutney.</p>
-            </div>
-            <div class="menu-item">
-                <h3><span class="veg-badge"></span> Idli Sambar (3 Pcs)</h3>
-                <p class="price">₹80</p>
-                <p>Soft steamed rice cakes served with flavorful lentil sambar and assorted chutneys.</p>
-            </div>
-            <div class="menu-item">
-                <h3><span class="veg-badge"></span> Paneer Butter Masala</h3>
-                <p class="price">₹180</p>
-                <p>Cottage cheese cubes in rich creamy tomato gravy, served with butter naan or rice.</p>
-            </div>
-            <div class="menu-item">
-                <h3><span class="veg-badge"></span> Hyderabadi Biryani</h3>
-                <p class="price">₹220</p>
-                <p>Fragrant basmati rice layered with vegetables and aromatic spices, served with raita.</p>
-            </div>
-            <div class="menu-item">
-                <h3><span class="veg-badge"></span> South Indian Thali</h3>
-                <p class="price">₹250</p>
-                <p>Complete meal with rice, sambar, rasam, 2 curries, poriyal, curd, pickle, papad & dessert.</p>
-            </div>
-            <div class="menu-item">
-                <h3><span class="veg-badge"></span> Filter Coffee</h3>
-                <p class="price">₹50</p>
-                <p>Traditional South Indian filter coffee made with freshly ground beans and hot milk.</p>
-            </div>
-            <div class="menu-item">
-                <h3><span class="veg-badge"></span> Mysore Pak</h3>
-                <p class="price">₹100</p>
-                <p>Classic South Indian sweet made with gram flour, ghee, and sugar - melt in your mouth goodness.</p>
-            </div>
-            <div class="menu-item">
-                <h3><span class="veg-badge"></span> Onion Uttapam</h3>
-                <p class="price">₹110</p>
-                <p>Thick rice pancake topped with onions, tomatoes, and chilies, served with chutney.</p>
-            </div>
-            <div class="menu-item">
-                <h3><span class="veg-badge"></span> Medu Vada (2 Pcs)</h3>
-                <p class="price">₹90</p>
-                <p>Crispy lentil donuts, deep-fried to perfection, served with sambar and coconut chutney.</p>
+        <div class="contact-section">
+            <h3>📍 સ્થાન | Location</h3>
+            <div class="contact-item">
+                <strong>જયંતિભાઈ માવાવાળા</strong><br>
+                સ્વીટ્સ એન્ડ નમકીન | Sweets & Namkeen<br>
+                ઓમકાર કોમ્પ્લેક્સ, નિર્મલા કોન્વેન્ટ સ્કૂલ રોડ, નિર્મલા કોન્વેન્ટ સ્કૂલ સામે<br>
+                રાજકોટ, ગુજરાત - ૩૬૦૦૦૭<br>
             </div>
         </div>
-    </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery">
-        <h2>Food Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">🥘 Dosa</div>
-            <div class="gallery-item">🍛 Thali</div>
-            <div class="gallery-item">🥙 Idli</div>
-            <div class="gallery-item">☕ Coffee</div>
-            <div class="gallery-item">🍰 Sweets</div>
-            <div class="gallery-item">🥗 Biryani</div>
+        <div class="contact-section">
+            <h3>📞 સંપર્ક | Contact Details</h3>
+            <div class="contact-item">
+                <strong>ફોન | Phone:</strong> +919712404744<br>
+                <strong>વ્હોટ્સએપ | WhatsApp:</strong> +919712404744<br>
+                <strong>ઈમેલ | Email:</strong> info@jayantibhaimavavala.com
+            </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Visit Us Today</h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <p><strong>📍 Address:</strong> Shop No. 12, MG Road, Near Koramangala Police Station, Bangalore - 560034, Karnataka</p>
-                <p><strong>📞 Phone:</strong> +91 80 1234 5678</p>
-                <p><strong>📧 Email:</strong> order@spicegarden.com</p>
-                <p><strong>🕐 Timings:</strong><br>
-                   Breakfast & Lunch: 8:00 AM - 3:00 PM<br>
-                   Dinner: 6:00 PM - 10:00 PM<br>
-                   Open All Days
-                </p>
-                
-                <div class="contact-buttons">
-                    <a href="tel:+918012345678" class="contact-btn call">📞 Call Now: +91 80 1234 5678</a>
-                    <a href="https://wa.me/918012345678?text=Hi%2C%20I%20want%20to%20order%20from%20Spice%20Garden" class="contact-btn whatsapp" target="_blank">💬 WhatsApp: +91 80 1234 5678</a>
+        <div class="contact-section">
+            <h3>🕐 સમય | Timing</h3>
+            <div class="contact-item">
+                <strong>સોમવાર - શનિવાર | Monday - Saturday:</strong> 9:00 AM - 9:00 PM<br>
+                <strong>રવિવાર | Sunday:</strong> 9:00 AM - 10:00 PM<br>
+        
+            </div>
+        </div>
+
+        <div class="qr-section">
+            <div class="qr-box">
+                <h3>📍 લોકેશન | Location</h3>
+                <div class="qr-code">
+                    <img src="location_1.png" alt="Google Maps QR Code">
                 </div>
+                <p style="margin-top: 5mm; font-size: 9pt; color: #ccc;">Scan for Google Maps</p>
+            </div>
 
-                <div class="payment-methods">
-                    <h3>We Accept</h3>
-                    <div class="payment-icons">
-                        <span>💳 Card</span>
-                        <span>💵 Cash</span>
-                        <span>📱 UPI</span>
-                        <span>💰 PhonePe</span>
-                        <span>🅿️ Paytm</span>
-                    </div>
+            <div class="qr-box">
+                <h3>⭐ રિવ્યુ | Reviews</h3>
+                <div class="qr-code">
+                    <img src="Review.png" alt="Review QR Code">
                 </div>
-            </div>
-
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6509411797836!2d77.61214431482163!3d12.927923090888597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae14f066a06e2f%3A0x6d80c78da511c10d!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
+                <p style="margin-top: 5mm; font-size: 9pt; color: #ccc;">Rate us on Google</p>
             </div>
         </div>
 
-        <div style="text-align: center; margin-top: 3rem;">
-            <a href="https://goo.gl/maps/example" class="btn" target="_blank" style="background: white; color: #1a1a1a;">🗺️ Get Directions on Google Maps</a>
+        <div class="divider"></div>
+
+        <div class="footer">
+            <p class="premium-text">Premium Quality Since 1980</p>
+            <p style="font-size: 12pt; margin-top: 4mm;">🙏 તમારા પ્રેમ અને સહયોગ માટે આભાર 🙏</p>
+            <p style="color: #bbb;">Thank you for your love and support</p>
+            <div class="divider"></div>
+            <p style="margin-top: 4mm; font-size: 9pt; color: #777;">Made with ❤️ for our valued customers</p>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Spice Garden Restaurant. All Rights Reserved.</p>
-        <p>🌱 100% Pure Vegetarian | ❤️ Made with Love in Bangalore</p>
-        <p style="margin-top: 1rem;">
-            <a href="https://facebook.com/spicegarden" style="color: #d4af37; margin: 0 1rem;">Facebook</a>
-            <a href="https://instagram.com/spicegarden" style="color: #d4af37; margin: 0 1rem;">Instagram</a>
-            <a href="https://wa.me/918012345678" style="color: #d4af37; margin: 0 1rem;">WhatsApp</a>
-        </p>
-    </footer>
+        <div class="corner-decoration bottom-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+    </div>
 
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+<script>
+const API_URL = "https://script.google.com/macros/s/AKfycbwG2Ov5fIxwgl52_7ICHZZTO72llUuKoffgYq1Sdf4c5IUhq-SPnkaXVZn1Py01kY-w/exec";
 
-        // Add scroll effect to nav
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.background = 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)';
-            } else {
-                nav.style.background = 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)';
-            }
-        });
-    </script>
+function convertGoogleDriveUrl(url) {
+  if (!url) return "";
+  url = url.replace(/^_+|_+$/g, '').trim();
+  
+  let fileId = null;
+  const match1 = url.match(/[?&]id=([^&]+)/);
+  if (match1) fileId = match1[1];
+  
+  const match2 = url.match(/\/file\/d\/([^\/]+)/);
+  if (match2) fileId = match2[1];
+  
+  if (fileId) {
+    return `https://drive.google.com/thumbnail?id=${fileId}&sz=w400`;
+  }
+  
+  return url;
+}
+
+function createPageHeader(pageName, pageNumber) {
+  return `
+    <div class="corner-decoration top-left"></div>
+    <div class="corner-decoration top-right"></div>
+    <div class="bg-pattern"></div>
+    
+    <div class="menu-header">
+      <h1>${pageName}</h1>
+      <p>${pageName} Collection</p>
+    </div>
+  `;
+}
+
+function createPageFooter() {
+  return `
+    <div class="corner-decoration bottom-left"></div>
+    <div class="corner-decoration bottom-right"></div>
+  `;
+}
+
+function createLiveSection() {
+  return `
+    <div class="live-section">
+      <div class="live-header">
+        <div class="live-title">🔥 તાજા બનાવેલા Live Snacks</div>
+        <div class="live-timing">⏰ 8:00 AM - 11:00 AM</div>
+      </div>
+      <p style="color: #fff; font-size: 10pt; margin-top: 2mm; position: relative; z-index: 1;">સવારે 8 થી 11 વાગ્યા સુધી તાજા બનાવેલા ફરસાણ | Fresh snacks made every morning from 8 AM to 11 AM</p>
+    </div>
+  `;
+}
+
+function createCategoryHeader(categoryName, isBestseller) {
+  return `
+    <div class="category-header">
+      <div class="category-title">
+        ${categoryName}
+        ${isBestseller ? '<span class="bestseller-badge">⭐ Bestsellers</span>' : ''}
+      </div>
+      <div class="category-subtitle">${isBestseller ? 'Our Most Popular Items' : 'Premium Quality'}</div>
+    </div>
+  `;
+}
+
+function createMenuItem(item) {
+  const imageUrl = convertGoogleDriveUrl(item.image);
+  const imageHTML = imageUrl ? 
+    `<img src="${imageUrl}" alt="${item.name}" class="item-image" onerror="this.outerHTML='<div class=\\'item-image-placeholder\\'></div>'">` :
+    `<div class="item-image-placeholder"></div>`;
+  
+  return `
+    <div class="menu-item">
+      ${imageHTML}
+      <div class="item-details">
+        <div class="item-name-gu">${item.name}</div>
+        ${item.nameEn ? `<div class="item-name-en">${item.nameEn}</div>` : ''}
+        ${item.description ? `<div class="item-description">${item.description}</div>` : ''}
+      </div>
+      <div class="item-price">₹${item.price || 'N/A'}</div>
+    </div>
+  `;
+}
+
+function renderMenu(data) {
+  const container = document.getElementById('dynamicPages');
+  container.innerHTML = '';
+  
+  console.log('Rendering menu with items:', data.length);
+  
+  if (!data || data.length === 0) {
+    container.innerHTML = `
+      <div class="page menu-page">
+        <div class="loading">No menu items found. Please check your Google Sheets data.</div>
+      </div>
+    `;
+    return;
+  }
+  
+  // Group by page/section
+  const pages = {};
+  data.forEach(item => {
+    if (!item.name) {
+      console.log('Skipping item without name:', item);
+      return;
+    }
+    const page = item.page || "મીઠાઈ";
+    if (!pages[page]) pages[page] = {};
+    
+    const category = item.category || "Other";
+    if (!pages[page][category]) pages[page][category] = [];
+    pages[page][category].push(item);
+  });
+  
+  console.log('Grouped pages:', pages);
+  
+  const ITEMS_PER_PAGE = 6; // Adjust based on how many items fit on one A4 page
+  
+  // Render each page
+  Object.keys(pages).forEach(pageName => {
+    const categories = pages[pageName];
+    const isLivePage = pageName.toLowerCase().includes('live') || pageName.toLowerCase().includes('લાઈવ');
+    
+    let pageNumber = 1;
+    let currentPageDiv = null;
+    let currentCategoryDiv = null;
+    let itemsOnCurrentPage = 0;
+    let currentCategory = null;
+    
+    // Function to create a new page
+    function createNewPage() {
+      if (currentPageDiv && currentCategoryDiv) {
+        currentPageDiv.appendChild(currentCategoryDiv);
+      }
+      if (currentPageDiv) {
+        currentPageDiv.innerHTML += createPageFooter();
+        container.appendChild(currentPageDiv);
+      }
+      
+      currentPageDiv = document.createElement('div');
+      currentPageDiv.className = 'page menu-page';
+      currentPageDiv.innerHTML = createPageHeader(pageName, pageNumber);
+      
+      // Add live section only on first page
+      if (isLivePage && pageNumber === 1) {
+        currentPageDiv.innerHTML += createLiveSection();
+      }
+      
+      itemsOnCurrentPage = 0;
+      pageNumber++;
+    }
+    
+    // Create first page
+    createNewPage();
+    
+    Object.keys(categories).forEach(categoryName => {
+      const items = categories[categoryName];
+      const isBestseller = categoryName.toLowerCase().includes('bestseller') || 
+                           categoryName.toLowerCase().includes('બેસ્ટ સેલર');
+      
+      // Check if we need a new page for this category header
+      // (if current page already has items and adding category would exceed limit)
+      if (itemsOnCurrentPage >= ITEMS_PER_PAGE - 1 && itemsOnCurrentPage > 0) {
+        createNewPage();
+      }
+      
+      // Create category section
+      if (currentCategoryDiv && currentCategory !== categoryName) {
+        currentPageDiv.appendChild(currentCategoryDiv);
+      }
+      
+      currentCategoryDiv = document.createElement('div');
+      currentCategoryDiv.className = 'category';
+      currentCategoryDiv.innerHTML = createCategoryHeader(categoryName, isBestseller);
+      currentCategory = categoryName;
+      
+      // Add items to category
+      items.forEach((item, index) => {
+        // Check if we need a new page
+        if (itemsOnCurrentPage >= ITEMS_PER_PAGE) {
+          // Save current category to current page
+          currentPageDiv.appendChild(currentCategoryDiv);
+          
+          // Create new page
+          createNewPage();
+          
+          // Start new category section on new page
+          currentCategoryDiv = document.createElement('div');
+          currentCategoryDiv.className = 'category';
+          currentCategoryDiv.innerHTML = createCategoryHeader(categoryName, isBestseller);
+          currentCategory = categoryName;
+        }
+        
+        // Add item
+        currentCategoryDiv.innerHTML += createMenuItem(item);
+        itemsOnCurrentPage++;
+      });
+    });
+    
+    // Add last category and page
+    if (currentCategoryDiv) {
+      currentPageDiv.appendChild(currentCategoryDiv);
+    }
+    if (currentPageDiv) {
+      currentPageDiv.innerHTML += createPageFooter();
+      container.appendChild(currentPageDiv);
+    }
+  });
+  
+  console.log('Menu rendered successfully!');
+}
+
+async function loadMenu() {
+  const container = document.getElementById('dynamicPages');
+  
+  // Show loading state
+  container.innerHTML = `
+    <div class="page menu-page">
+      <div class="loading">Loading menu... Please wait</div>
+    </div>
+  `;
+  
+  try {
+    // Define all API URLs
+    const NAMKEEN_API = "https://script.google.com/macros/s/AKfycbwG2Ov5fIxwgl52_7ICHZZTO72llUuKoffgYq1Sdf4c5IUhq-SPnkaXVZn1Py01kY-w/exec";
+    const SWEETS_API = "https://script.google.com/macros/s/AKfycbwdeQJ4izhs1-K69GzV2QXGdBO0JW9hMPJgAu5I2U7cOvijz9Vdf7Ca1Mj-TPV2XiF1/exec";
+    const LIVE_FOOD_API = "https://script.google.com/macros/s/AKfycbyNDS3bynra_c46QhJj1NwkF1Gk74k3UJ7VVrZE1uMo2AoHJo48KE4UwdtEH-6aPW4/exec";
+    
+    console.log('Fetching from multiple APIs...');
+    
+    // Fetch all data in parallel
+    const [namkeenResponse, sweetsResponse, liveFoodResponse] = await Promise.all([
+      fetch(NAMKEEN_API),
+      fetch(SWEETS_API),
+      fetch(LIVE_FOOD_API)
+    ]);
+    
+    // Parse all responses
+    const namkeenData = await namkeenResponse.json();
+    const sweetsData = await sweetsResponse.json();
+    const liveFoodData = await liveFoodResponse.json();
+    
+    console.log('Namkeen Data:', namkeenData);
+    console.log('Sweets Data:', sweetsData);
+    console.log('Live Food Data:', liveFoodData);
+    
+    // Extract arrays from response (handle different formats)
+    const namkeenArray = Array.isArray(namkeenData) ? namkeenData : (namkeenData.data || namkeenData.values || []);
+    const sweetsArray = Array.isArray(sweetsData) ? sweetsData : (sweetsData.data || sweetsData.values || []);
+    const liveFoodArray = Array.isArray(liveFoodData) ? liveFoodData : (liveFoodData.data || liveFoodData.values || []);
+    
+    console.log('Namkeen Array:', namkeenArray);
+    console.log('Sweets Array:', sweetsArray);
+    console.log('Live Food Array:', liveFoodArray);
+    
+    // Process Namkeen items
+    const namkeenItems = namkeenArray.map(row => ({
+      name: row.name || '',
+      nameEn: row.nameEn || '',
+      description: row.description || '',
+      price: row.price || '',
+      category: row.category || 'Other',
+      page: row.page || 'Namkeen (બધા નમકીન શુદ્ધ મગફળીના તેલનો ઉપયોગ કરીને બનાવવામાં આવે છે.)',
+      image: row.image || ''
+    })).filter(item => item.name);
+    
+    // Process Sweets items
+    const sweetsItems = sweetsArray.map(row => ({
+      name: row.name || '',
+      nameEn: row.nameEn || '',
+      description: row.description || '',
+      price: row.price || '',
+      category: row.category || 'Other',
+      page: row.page || 'Sweets',
+      image: row.image || ''
+    })).filter(item => item.name);
+    
+    // Process Live Food items
+    const liveFoodItems = liveFoodArray.map(row => ({
+      name: row.name || '',
+      nameEn: row.nameEn || '',
+      description: row.description || '',
+      price: row.price || '',
+      category: row.category || 'Other',
+      page: row.page || 'લાઈવ ફરસાણ',
+      image: row.image || ''
+    })).filter(item => item.name);
+    
+    // Combine all items
+    const allMenuItems = [...namkeenItems, ...sweetsItems, ...liveFoodItems];
+    
+    console.log('Total Menu Items:', allMenuItems.length);
+    console.log('Namkeen Items:', namkeenItems.length);
+    console.log('Sweets Items:', sweetsItems.length);
+    console.log('Live Food Items:', liveFoodItems.length);
+    console.log('Combined Menu Items:', allMenuItems);
+    
+    if (allMenuItems.length === 0) {
+      throw new Error('No valid menu items found in any sheet');
+    }
+    
+    renderMenu(allMenuItems);
+    
+  } catch (error) {
+    console.error('Error loading menu:', error);
+    container.innerHTML = `
+      <div class="page menu-page">
+        <div class="loading" style="color: #ff6b6b;">
+          ❌ Error loading menu<br><br>
+          <span style="font-size: 10pt;">${error.message}</span><br><br>
+          <span style="font-size: 9pt;">Please check the browser console (F12) for details</span>
+        </div>
+      </div>
+    `;
+  }
+}
+loadMenu();
+</script>
 </body>
 </html>
